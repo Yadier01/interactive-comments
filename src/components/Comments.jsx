@@ -6,7 +6,7 @@ export const Comments = ({ comment }) => {
   return (
     <div
       key={comment.id}
-      className="flex text-left justify-center items-center flex-col gap-8"
+      className="flex text-left justify-center items-center flex-col gap-4"
     >
       <Comment
         comment={comment}
@@ -14,7 +14,7 @@ export const Comments = ({ comment }) => {
         setCommentScore={setCommentScore}
         isReply={false}
       />
-      <div className="">
+      <div className="border-l-2 border-gray-400/40">
         {comment.replies.map((replies) => (
           <Comment reply={replies} replyScore={replies.score} isReply={true} />
         ))}

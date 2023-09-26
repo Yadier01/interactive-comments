@@ -3,10 +3,11 @@ import { CommentMap } from "./components/CommentMap";
 import { ReplyIput } from "./components/ReplyInput";
 function App() {
   return (
-    <>
-      <CommentMap />
-      <ReplyIput />
-    </>
+    <main className="flex justify-center items-center">
+      <div className="max-w-xl">
+        <CommentMap />
+      </div>
+    </main>
   );
 }
 

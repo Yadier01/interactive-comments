@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ReplyIput } from "./ReplyInput";
+import { UserReply } from "./UserReply";
 
 export const Comment = ({
   comment,
@@ -9,7 +11,8 @@ export const Comment = ({
   setCommentScore,
 }) => {
   const [replyScoreState, setReplyScore] = useState(replyScore);
-
+  const [userReply, setUserReply] = useState(false);
+  const [replyText, setReplyText] = useState([]);
   const addOneHandler = () => {
     if (isReply) {
       setReplyScore((prev) => prev + 1);
@@ -17,7 +20,6 @@ export const Comment = ({
       setCommentScore((prev) => prev + 1);
     }
   };
-
   const subtractOneHandler = () => {
     if (isReply) {
       setReplyScore((prev) => prev - 1);
@@ -26,8 +28,8 @@ export const Comment = ({
     }
   };
   return (
-    <div className={`${isReply ? "border-l-2 border-gray-400/40" : ""}`}>
-      <div className={`${isReply ? "ml-4" : ""} bg-white p-4 rounded-md`}>
+    <>
+      <div className={`${isReply ? "ml-4 mt-4" : ""} bg-white p-4 rounded-md`}>
         <span className="flex items-center gap-4 ">
           <img
             src={isReply ? reply.user.image.png : comment.user.image.png}
@@ -41,23 +43,51 @@ export const Comment = ({
         </span>
         <div>
           <p>
-            <span className="text-purple-500">
+            <span className="text-[#5358b6]">
               {isReply ? `@${reply.replyingTo} ` : ""}
             </span>
             {isReply ? reply.content : comment.content}
           </p>
-          <div className="flex items-center justify-between pt-5">
-            <span className="flex p-3 bg-purple-100 gap-2 items-center">
+          <div className="flex items-center  justify-between pt-5">
+            <span className="flex p-3 bg-purple-100 rounded-lg gap-2 items-center">
               <button onClick={addOneHandler}>+</button>
               <p className="font-bold">
                 {isReply ? replyScoreState : commentScore}
               </p>
               <button onClick={subtractOneHandler}>-</button>
             </span>
-            <button>reply</button>
+            <button
+              onClick={() => setUserReply(!userReply)}
+              className=" font-bold text-[#5358b6]"
+            >
+              reply
+            </button>
           </div>
         </div>
       </div>
-    </div>
+      {replyText && (
+        <UserReply
+          userReply={userReply}
+          isReply={true}
+          replyText={replyText}
+          addOneHandler={addOneHandler}
+          subtractOneHandler={subtractOneHandler}
+          setUserReply={setUserReply}
+          setReplyText={setReplyText}
+          reply={reply}
+          comment={comment}
+        />
+      )}
+
+      {userReply && (
+        <ReplyIput
+          setReplyText={setReplyText}
+          isReply={isReply}
+          setUserReply={setUserReply}
+          reply={reply}
+          comment={comment}
+        />
+      )}
+    </>
   );
 };
