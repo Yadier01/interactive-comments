@@ -1,8 +1,31 @@
-# React + Vite
+# Interactive comments section
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Screenshot
 
-Currently, two official plugins are available:
+![](./screenshot.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Links
+
+- Live Site URL: [Vercel Live Site](https://interactive-comments-8d0f7l3iq-kcabsiemaneht.vercel.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- tailwindCCS
+- Flexbox
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+
+### Continued development
+
+---
+
+###### Work in progress
+
+- [] Saved in local storage
+- [] Added confirmation modal when delete is press
+- [] Added edit button
+
+---

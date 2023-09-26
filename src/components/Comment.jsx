@@ -58,9 +58,10 @@ export const Comment = ({
             </span>
             <button
               onClick={() => setUserReply(!userReply)}
-              className=" font-bold text-[#5358b6]"
+              className=" flex items-center  text- gap-4 font-bold text-[#5358b6]"
             >
-              reply
+              {/* change to svg in Future */}
+              <img src="./icon-reply.svg" alt="" className="w-4 h-4" /> Reply
             </button>
           </div>
         </div>

@@ -45,16 +45,18 @@ export const UserReply = ({
                 </span>
                 <div className="flex gap-8">
                   <button
-                    className="text-red-700 font-bold"
+                    className="text-red-700 flex items-center gap-4 font-bold"
                     onClick={() => handleDelete(index)}
                   >
-                    delete
+                    <img src="./icon-delete.svg" alt="" className="w-4 h-4" />
+                    Delete
                   </button>
                   <button
-                    className="text-[#5358b6] font-bold"
+                    className=" flex items-center gap-4 text-[#5358b6] font-bold"
                     onClick={() => setUserReply(!userReply)}
                   >
-                    reply
+                    <img src="./icon-reply.svg" alt="" />
+                    Reply
                   </button>
                 </div>
               </div>
