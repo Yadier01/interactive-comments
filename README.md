@@ -26,6 +26,6 @@
 
 - [] Saved in local storage
 - [] Added confirmation modal when delete is press
-- [] Added edit button
+- [x] Added edit button
 
 ---
